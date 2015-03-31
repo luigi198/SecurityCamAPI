@@ -1,4 +1,4 @@
-var errorEnum = require('./errorEnum'),
+var errorEnum = require('./errorEnum').errorNum,
     Response = require('./response');
 
 /**

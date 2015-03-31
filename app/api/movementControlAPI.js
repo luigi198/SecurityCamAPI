@@ -25,7 +25,7 @@ exports.notifyMovementAPI = function(req, res) {
   if(req.hasOwnProperty('body')) {
     var result = checkRequest.checkRequest(req.body, requestFormat);
     if(result.isValid()) {
-      console.log('success notify');
+      ApiResponse.Success(res, {'received': true});
     } else {
       ApiResponse.Fail(res, result.error);
     }
