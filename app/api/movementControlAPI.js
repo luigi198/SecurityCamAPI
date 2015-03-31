@@ -25,6 +25,13 @@ exports.notifyMovementAPI = function(req, res) {
   if(req.hasOwnProperty('body')) {
     var result = checkRequest.checkRequest(req.body, requestFormat);
     if(result.isValid()) {
+      console.log('received msg at: ', Date.now());
+      if(req.body.hasOwnProperty('rasp')) {
+        console.log('received from raspberry!');
+      }
+      if(req.body.hasOwnProperty('motion')) {
+        console.log('motion detected!');
+      }
       ApiResponse.Success(res, {'received': true});
     } else {
       ApiResponse.Fail(res, result.error);
